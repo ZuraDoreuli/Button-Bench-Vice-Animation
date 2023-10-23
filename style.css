@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #41415f;
+}
+button {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #0e0a20;
+  border-radius: 10px;
+  background-color: inherit;
+  color: #0e0a20;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  box-shadow: #00000040 0 14px 28px, #00000038 0 10px 10px;
+  overflow: hidden;
+  cursor: pointer;
+  animation: letter-spacing 10s linear infinite;
+}
+button::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0e0a20;
+  animation: move 10s linear infinite;
+}
+button::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #0e0a20;
+  animation: move 10s linear infinite;
+}
+@keyframes move {
+  0% {
+    width: 50px;
+  }
+  30% {
+    width: 70px;
+  }
+  50% {
+    width: 30px;
+  }
+  70% {
+    width: 60px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@keyframes letter-spacing {
+  0% {
+    letter-spacing: 8px;
+  }
+  30% {
+    letter-spacing: 0px;
+  }
+  50% {
+    letter-spacing: 15px;
+  }
+  70% {
+    letter-spacing: 3px;
+  }
+  100% {
+    letter-spacing: 8px;
+  }
+}
+button:hover {
+  animation: none;
+  letter-spacing: 10px;
+}
+button:hover::before {
+  animation: none;
+  width: 3px;
+}
+button:hover::after {
+  animation: none;
+  width: 3px;
+}
